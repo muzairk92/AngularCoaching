@@ -5,7 +5,9 @@
 });
 <script src="./js/controller/register.js"></script>*/
 
-app.controller('registerCtrl', function($scope , authServices) {
+app.controller('registerCtrl', function($scope , authServices, $state) {
+    var isRegister;
+
     $scope.user ={
         name:'',
         pass:'',
@@ -17,7 +19,9 @@ app.controller('registerCtrl', function($scope , authServices) {
             email:'',
             pass:''
         };
-        authServices.doRegister(data)
+        isRegister = authServices.doRegister(data);
+        if(isRegister) return $state.go('login');
+        return console.log('something wrong');
     };
 
 });

@@ -14,12 +14,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/login.html'
 		  ,controller: 'loginCtrl'
       })
-   	  .state('Register',{
+   	  .state('register',{
    	  	url : '/register',
    	  	templateUrl : 'templates/register.html'
 		  ,controller: 'registerCtrl'
    	  })
-   	  .state('Todo', {
+   	  .state('todo', {
    	  	url : '/todo',
    	  	templateUrl : 'templates/todo.html'
 		  ,controller: 'todoCtrl'

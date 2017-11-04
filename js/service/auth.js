@@ -13,7 +13,12 @@ app.service('authServices', function(){
     };
 
     this.doRegister = function (user){
+        var isUser;
+        isUser = reg.some(function(item){
+            return item.email == user.email;
+        });
+        if(isUser) return console.log('Account already available');
         reg.push(user);
-        console.log(reg);
+        return reg;
     }
 });

@@ -1,6 +1,6 @@
 
 app.controller('loginCtrl', function($scope ,authServices) {
-    authServices.demo();
+    var isLogin;
 
     $scope.user = {
         email : '',
@@ -8,7 +8,9 @@ app.controller('loginCtrl', function($scope ,authServices) {
     };
 
     $scope.login = function (data) {
-     var check=authServices.doLogin(data);
-     console.log(check);
+     isLogin=authServices.doLogin(data);
+        if(isLogin) return $state.go('todo');
+        return console.log('something wrong');
+
     };
 });
