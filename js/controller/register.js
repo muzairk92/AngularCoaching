@@ -7,7 +7,6 @@
 
 app.controller('registerCtrl', function($scope , authServices, $state) {
     var isRegister;
-
     $scope.user ={
         name:'',
         pass:'',

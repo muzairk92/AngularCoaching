@@ -1,5 +1,5 @@
 
-app.controller('loginCtrl', function($scope ,authServices) {
+app.controller('loginCtrl', function($scope ,$state, authServices) {
     var isLogin;
 
     $scope.user = {
