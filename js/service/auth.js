@@ -3,7 +3,7 @@
 app.service('authServices', function(){
 
     var reg = [];
-    var id=0;
+    this.id=0;
 
     this.demo = function() {
         console.log('Auth Services');
@@ -21,9 +21,9 @@ app.service('authServices', function(){
             return item.email == user.email;
         });
         if(isUser) return console.log('Account already available');
-        user.id= id++;
+        user.id= this.id++;
         reg.push(user);
-        console.log(user);
+       // return console.log(reg);
         return reg;
     }
 });

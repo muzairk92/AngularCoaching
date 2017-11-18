@@ -2,9 +2,13 @@
 
 app.service('todoServices', function(){
 
-    var id = 0;
+    this.id = 0;
+    var allTodo=[];
 
-    this.addTodo = function(todo) {
+    this.add = function(todo) {
+        todo.id = this.id++;
+       allTodo.push(todo);
+        return console.log(allTodo);
 
     };
 
@@ -17,7 +21,6 @@ app.service('todoServices', function(){
     };
 
     this.getAllTodo = function(){
-
     };
 
     this.todoById = function(user) {
