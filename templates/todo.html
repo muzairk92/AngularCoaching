@@ -10,9 +10,9 @@
     <input type="submit" value="Add Todo">
 </form>
 
-<div>
-    <span>Title </span>
-    <span>Description </span>
-    <button>Remove </button>
-    <button>Update </button>
+<div ng-repeat="t in allTodos">
+    <span>Title: {{t.title}} </span>
+    <span>Description: {{t.description}}</span>
+    <button ng-click="deleteTodo(t)">Remove </button>
+    <button ng-click="updateTodo(t)">Update </button>
 </div>
