@@ -1,15 +1,20 @@
 
 app.controller('todoCtrl', function($scope,authServices,todoServices) {
- $scope.allTodos;
+
+    $scope.isSorting = false;
 
     $scope.addTodo = function (todo) {
-        todoServices.add(todo);
-        $scope.getAllTodo();
+        var aa = angular.copy(todo);
+        todoServices.add(aa);
+        // todo = null;
+       // $scope.getAllTodo();
     };
 
     $scope.getAllTodo = function(){
         $scope.allTodos = todoServices.getAllTodo();
     };
+
+    $scope.getAllTodo();
 
     $scope.deleteTodo = function(data){
         console.log(data);
@@ -20,5 +25,9 @@ app.controller('todoCtrl', function($scope,authServices,todoServices) {
         console.log(data);
         todoServices.updateTodo(data)
     };
+
+    $scope.sort = function () {
+        $scope.isSorting = !$scope.isSorting;
+    }
     console.log('Working Todo');
 });
